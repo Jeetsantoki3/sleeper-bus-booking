@@ -12,11 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve frontend
-app.use(express.static(path.join(__dirname, "../frontend")));
-
-/* ------------------ APIs ------------------ */
-
 // Get seats
 app.get("/api/seats", (req, res) => {
   res.json(seats);
