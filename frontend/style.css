@@ -1,0 +1,279 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background and font */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+/* Top header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar h1 {
+  font-size: 22px;
+}
+
+.topbar p {
+  font-size: 14px;
+  color: #334155;
+  margin-top: 2px;
+}
+
+.badge {
+  background: #0ea5e9;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* Main layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+  padding: 18px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0px 8px 24px rgba(15, 23, 42, 0.08);
+  padding: 18px;
+}
+
+.card-head {
+  margin-bottom: 14px;
+}
+
+.card-head h2 {
+  font-size: 18px;
+}
+
+.muted {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* Berth section */
+.berth-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.berth h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+/* Seat grid layout */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Seat button */
+.seat {
+  padding: 14px 0;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.seat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Seat colors */
+.availableSeat {
+  background: #dcfce7;
+}
+.bookedSeat {
+  background: #fecaca;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.selectedSeat {
+  background: #bfdbfe;
+  border: 1px solid #2563eb;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 15px;
+  color: #334155;
+  font-size: 13px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+.dot.available { background: #22c55e; }
+.dot.booked { background: #ef4444; }
+.dot.selected { background: #3b82f6; }
+
+/* Form styles */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #334155;
+}
+
+input, select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 11px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #3b82f6;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.danger {
+  background: #dc2626;
+  color: white;
+}
+
+/* Summary Box */
+.summary-box {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px dashed #cbd5e1;
+  background: #f8fafc;
+}
+
+.summary-box h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.pill {
+  background: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* Prediction */
+.prediction {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* Ticket / booking result */
+.ticket {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f1f5f9, #ffffff);
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  line-height: 1.4;
+  display: none; /* hidden until booking done */
+}
+
+/* Soft divider */
+.soft-line {
+  margin: 18px 0;
+  border: none;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.cancel-title {
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.cancel-msg {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 12px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .berth-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .seat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

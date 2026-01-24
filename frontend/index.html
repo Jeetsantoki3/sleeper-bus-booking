@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sleeper Bus | AHD → BOM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Top header section -->
+  <header class="topbar">
+    <div>
+      <h1>🚌 Sleeper Bus Booking</h1>
+      <p>Route: <b>Ahmedabad</b> → <b>Mumbai</b></p>
+    </div>
+
+    <!-- Small decorative badge -->
+    <span class="badge">Night Sleeper • AC</span>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT SIDE: Seat layout -->
+    <section class="card seats-card">
+      <div class="card-head">
+        <h2>Select Seats</h2>
+        <p class="muted">Upper & Lower berths shown separately</p>
+      </div>
+
+      <!-- Separate areas for upper and lower berth -->
+      <div class="berth-wrap">
+        <div class="berth">
+          <h3>Upper Berth</h3>
+          <div id="upperGrid" class="seat-grid"></div>
+        </div>
+
+        <div class="berth">
+          <h3>Lower Berth</h3>
+          <div id="lowerGrid" class="seat-grid"></div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span><i class="dot available"></i> Available</span>
+        <span><i class="dot booked"></i> Booked</span>
+        <span><i class="dot selected"></i> Selected</span>
+      </div>
+    </section>
+
+    <!-- RIGHT SIDE: Details + actions -->
+    <section class="card details-card">
+      <div class="card-head">
+        <h2>Passenger & Meal</h2>
+        <p class="muted">Fill details and confirm your booking</p>
+      </div>
+
+      <label>Passenger Name</label>
+      <input id="passengerName" type="text" placeholder="e.g. Jeet Patel" />
+
+      <label>Meal Preference (Optional)</label>
+      <select id="mealOption">
+        <option value="">-- No Meal --</option>
+        <option value="Veg">Veg</option>
+        <option value="Non-Veg">Non-Veg</option>
+        <option value="Jain">Jain</option>
+      </select>
+
+      <!-- Live Summary Preview -->
+      <div class="summary-box">
+        <h3>🎫 Booking Summary</h3>
+        <p><b>Seat:</b> <span id="summarySeat" class="pill">Not Selected</span></p>
+        <p><b>Name:</b> <span id="summaryName" class="pill">---</span></p>
+        <p><b>Meal:</b> <span id="summaryMeal" class="pill">None</span></p>
+      </div>
+
+      <button id="predictBtn" class="btn secondary">Check Confirmation Chance</button>
+      <p id="predictionResult" class="prediction"></p>
+
+      <button id="bookBtn" class="btn primary">Confirm Booking ✅</button>
+
+      <!-- Result Ticket will appear here -->
+      <div id="bookingResult" class="ticket"></div>
+
+      <hr class="soft-line"/>
+
+      <!-- Cancellation Section -->
+      <h3 class="cancel-title">Cancel Booking</h3>
+      <input id="cancelId" type="text" placeholder="Enter Booking ID" />
+      <button id="cancelBtn" class="btn danger">Cancel ❌</button>
+      <p id="cancelResult" class="cancel-msg"></p>
+    </section>
+  </main>
+
+  <!-- Simple footer -->
+  <footer class="footer">
+    Made for assignment • Simple UI + working backend integration
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
